@@ -9,18 +9,25 @@ package com.mycompany.sistemamatricula;
  * @author Usuario
  */
 
+import java.awt.Graphics;
+import java.awt.Image;
 import javax.swing.*;
-import java.awt.event.*;
+import java.util.Locale;
 import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.view.JasperViewer;
 public class MenuPrincipal extends javax.swing.JFrame {
-
+    
+    Fondo fondo = new Fondo();
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
+        
+        
         initComponents();
+        
+        this.setContentPane(fondo);
+        
         setTitle("Sistema de Matrícula");
         setSize(1000, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -132,8 +139,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         GEstudiante rpt= new GEstudiante();
         JasperPrint jp = rpt.reporteTodosEstudiantes();
-        JasperViewer.viewReport(jp);
-        
+        //JasperViewer.viewReport(jp);
+        JasperViewer.viewReport(jp, false, Locale.ENGLISH);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
@@ -182,4 +189,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
+    class Fondo extends JPanel{
+        private Image imagen;
+        
+        @Override
+        public void paint(Graphics g){
+            //imagen = new ImageIcon(getClass().getResource("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\SistemaMatricula\\src\\main\\java\\com\\mycompany\\sistemamatricula\\Imagenes\\Inicio.png")).getImage();
+            imagen = new ImageIcon("C:\\Users\\Usuario\\Documents\\NetBeansProjects\\SistemaMatricula\\src\\main\\java\\com\\mycompany\\sistemamatricula\\Imagenes\\fondo2.jpg").getImage();
+            
+            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+            
+            setOpaque(false);
+            
+            super.paint(g);
+        }
+
+       
+    }
+    
 }
