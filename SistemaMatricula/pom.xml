@@ -12,7 +12,36 @@
         <exec.mainClass>com.mycompany.sistemamatricula.Sistemamatricula</exec.mainClass>
     </properties>
     
-    <build>
+  
+    <dependencies>
+        
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>42.7.4</version>
+            </dependency>
+            
+            <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
+            <dependency>
+                <groupId>net.sf.jasperreports</groupId>
+                <artifactId>jasperreports</artifactId>
+            <version>7.0.0</version>
+            </dependency>
+            
+                        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.8.2</version>
+    <scope>test</scope>
+</dependency>
+
+
+            
+    </dependencies>
+    
+    
+        <build>
   <plugins>
     <plugin>
       <!-- Build an executable JAR -->
@@ -32,21 +61,4 @@
   </plugins>
 </build>
     
-    <dependencies>
-        
-            <dependency>
-                <groupId>org.postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>42.7.4</version>
-            </dependency>
-            
-            <!-- https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
-            <dependency>
-                <groupId>net.sf.jasperreports</groupId>
-                <artifactId>jasperreports</artifactId>
-            <version>7.0.0</version>
-</dependency>
-
-            
-    </dependencies>
 </project>
